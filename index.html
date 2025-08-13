@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HC Testing</title>
+  <title>Responsive Audio Button</title>
   <style>
     body {
       font-family: sans-serif;
@@ -48,20 +48,14 @@
 </head>
 <body>
 
-  <h2>Tap to Play Sound 🎧</h2>
-  <button onclick="playAudio()">Play</button>
-
-  <audio id="myAudio" preload="auto">
-    <source src="audio.ogg" type="audio/ogg">
-    Your browser does not support the audio element.
-  </audio>
-
-  <script>
-    function playAudio() {
-      const audio = document.getElementById('myAudio');
-      audio.play();
-    }
-  </script>
+  <h2>Tap any where ☀️</h2>
+<script>
+  document.addEventListener("click", () => {
+    const audio = new Audio("audio.ogg");
+    audio.loop = true;
+    audio.play();
+  }, { once: true });
+</script>
 
 </body>
 </html>
