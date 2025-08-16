@@ -8,32 +8,40 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  overflow-x: hidden;
-
+    overflow: hidden; /* 🚫 disables scrolling */
   /* Repeating SVG background with rotated text */
   background-color: #f9f9f9;
   background-image: url("../img/bg.svg");
   background-repeat: repeat;
 }
 
+/* Fixed banner */
 .banner {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  position: relative;
-  z-index: 1;
+  text-align: center;
+  background-color: #fff;
+  z-index: 10;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .banner img {
   width: 100%;
   height: auto;
-  display: block;
 }
 
 .main-content {
-  flex: 1;
+  position: absolute;
+  top: 80px; /* height of banner */
+  bottom: 80px; /* height of footer */
+  left: 0;
+  right: 0;
+  overflow: hidden;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  padding: 20px;
   z-index: 1;
 }
 
@@ -42,7 +50,8 @@ body {
   grid-template-columns: 1fr 1fr;
   gap: 20px;
   width: 100%;
-  max-width: 400px;
+  max-width: 300px;
+  padding: 10px;
 }
 
 .sound-button {
